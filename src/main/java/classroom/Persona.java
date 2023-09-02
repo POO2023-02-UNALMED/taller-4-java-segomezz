@@ -8,7 +8,7 @@ public class Persona {
     
     static {
         totalPersonas = 0;
-        cedula = 3;
+                                //Eliminamos cedula=3 debido a que esta definido como final y no se puede reasignar su valor
     }
 
     public Persona(long cedula, String nombre) {
@@ -16,7 +16,11 @@ public class Persona {
         this.nombre = nombre;
         totalPersonas++;
     }
-    
+    public Persona() {                                 //Agregamos un metodo sobrecargado que no reciba parametros
+    	this.cedula=0;
+    	this.nombre="";
+    	totalPersonas++;
+    }
     public Persona(String nombre, long cedula) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -31,6 +35,7 @@ public class Persona {
 
     public Persona(String nombre) {
         this.nombre = "";
+        this.cedula=1;
         totalPersonas++;
     }
     

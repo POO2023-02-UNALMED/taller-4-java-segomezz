@@ -5,7 +5,7 @@ public class Grupo {
     public Persona[] estudiantes;
     public Persona profesor;
     public Asignatura asignatura;
-    public final int codigo = 0;
+    public int codigo=0;   //quitar el final para que inicie en 0 cuadno empiece un objeto pero que el atributo adquiera el calor del codigo que se le ingresara
     public String horario;
 
     public Grupo(Persona[] estudiantes, Persona profesor, Asignatura asignatura, int codigo, String horario) {
@@ -17,8 +17,7 @@ public class Grupo {
     }
 
     public Grupo(int cantidadEstudiantes, Persona profesor, Asignatura asignatura, int codigo, String horario) {
-        Persona[] personas = new Persona[cantidadEstudiantes];
-        this(personas, profesor, asignatura, codigo, horario);
+    	this(new Persona[cantidadEstudiantes], profesor, asignatura, codigo, horario);  //se junto la linea uno con la dos para que el this siemrpe quede de primero lugo del contructor
     }
 
     public Grupo(Persona[] estudiantes, Persona profesor, Asignatura asignatura) {
